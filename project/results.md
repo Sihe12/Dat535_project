@@ -1,0 +1,33 @@
+# LSTM 1 Day Model Results
+
+Metrics Results:
+MAE:  1.5853660106658936
+MSE:  4.1305460929870605
+Accuracy:  0.05951712653040886
+RMSE:  2.032374496244986
+![alt text](lstm1Day.png)
+
+# LSTM 7 Day Model Results
+
+Metrics Results:
+MAE:  2.339784860610962
+MSE:  9.076543807983398
+Accuracy:  0.2563380300998688
+RMSE:  3.0127302912778964
+![alt text](lstm7Day.png)
+
+# CNN 1 Day Model Results
+Metrics Results:
+MAE:  1.6661850214004517
+MSE:  4.5704345703125
+Accuracy:  0.05783267691731453
+RMSE:  2.13785747193598
+![alt text](cnn1Day.png)
+
+# CNN 7 Day Model Results
+Metrics Results:
+MAE:  2.39685320854187
+MSE:  9.574921607971191
+Accuracy:  0.2523943781852722
+RMSE:  3.0943370223637876
+![alt text](cnn7Day.png)
