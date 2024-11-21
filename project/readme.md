@@ -1,29 +1,16 @@
 
 Updating the Spark configuration file to increase the memory allocation for the driver, application master, and executors.
 
-```bash
-sudo tee -a /usr/local/spark/conf/spark-defaults.conf > /dev/null << EOL
-
-spark.master yarn
-spark.driver.memory 2g
-spark.yarn.am.memory 2g
-spark.executor.memory 2g
-spark.dynamicAllocation.enabled=false  # Disable dynamic allocation
-spark.executor.instances=3  # Set a fixed number of executors
-spark.executor.cores=4      # Number of cores per executor (or adjust based on your node resources)
-spark.task.cpus=1           # Number of CPUs per task (adjust based on your workload)
-
-EOL
-```
 
 sudo tee -a /usr/local/spark/conf/spark-defaults.conf > /dev/null << EOL
 
 spark.master yarn
 spark.driver.memory 2g
 spark.yarn.am.memory 2g
-spark.executor.memory 2g
-spark.dynamicAllocation.enabled=false
+spark.executor.memory=7g
+spark.executor.cores=4
 spark.executor.instances=3
+spark.dynamicAllocation.enabled=false
 
 EOL
 
@@ -31,6 +18,9 @@ stop-dfs.sh
 stop-yarn.sh
 start-dfs.sh
 start-yarn.sh
+
+$SPARK_HOME/sbin/start-history-server.sh
+
 
 Distributed training with TensorFlow 2
 https://learn.microsoft.com/en-us/azure/databricks/archive/machine-learning/train-model/spark-tf-distributor
@@ -51,6 +41,20 @@ Done:
 - Finne beste målestasjon for værdata. Loop gjennom gurusoft stationNr mapping og finn den som har mest data
 
 
+Dokumenter:
+    Hi Everyone,
+
+    if you have small dataset, make sure to make these changes in the file:
+
+    /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+
+    in place of ´dfs.replication´ use the value ´3´ instead of ´2´.
+
+    
+
+    This will make sure, all the datanodes have copy of the data and all datanodes should do the job.
+
+    It might still not work, if your data smaller after pre-processing.
 
 
 #Fetch data from 2000-2010
