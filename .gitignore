@@ -1,0 +1,8 @@
+# Ignore .env files
+.env
+
+#ignore NotUsed directory
+NotUsed
+
+# Ignore Documentation directory
+Documentation
