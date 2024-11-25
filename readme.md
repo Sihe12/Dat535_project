@@ -21,4 +21,5 @@ The project uses three models to forecast the temperature. The models are CNN, L
 <PASSWORD>
 ``` 
 Frost API link: https://frost.met.no/index.html
+
 4. **Run the pipeline**: Run the main.py file to run all pipeline components sequentially.
